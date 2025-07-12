@@ -1,0 +1,349 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #fff;
+  color: #333;
+  padding: 0 10px;
+}
+
+.navbar {
+  position: sticky;
+  top: 0;
+  background: #fff;
+  padding: 10px 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar .logo {
+  font-weight: bold;
+  font-size: 24px;
+  color: #111;
+}
+
+.navbar ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+   flex-wrap: wrap;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+}
+
+
+.navbar a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.navbar a:hover {
+  color: #e91e63;
+}
+
+.hero {
+  height: 95vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.hero .overlay {
+  text-align: center;
+  color: #fff;
+  background: rgba(0,0,0,0.6);
+  padding: 40px;
+  border-radius: 8px;
+}
+
+.hero h1 {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.about, .services, .testimonials, .contact {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 30px;
+  margin-bottom: 30px;
+  color: #e91e63;
+}
+
+.service-grid, .contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 0 20px;
+}
+
+.service-box {
+  background:rgba(233, 30, 99, 0.1);
+  /* backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2); */
+  /* linear-gradient(135deg, #e91e63, #f06292); */
+   /* #f8f8f8; */
+  padding: 20px;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.service-box:hover {
+  transform: translateY(-5px);
+}
+
+/* .gallery-grid img {
+  width: 100%;
+  border-radius: 10px;
+} */
+
+.testimonial-slider {
+  max-width: 800px;
+  margin: auto;
+}
+
+.testimonial {
+  background: #f4f4f4;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+
+.contact-grid form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contact-grid form input,
+.contact-grid form textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.contact-grid form button {
+  padding: 12px;
+  background: #e91e63;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.contact-grid form button:hover {
+  background: #c2185b;
+}
+
+.contact-grid iframe {
+  width: 100%;
+  height: 350px;
+  border: 0;
+  border-radius: 10px;
+}
+
+footer {
+  background: #222;
+  color: #fff;
+  text-align: center;
+  padding: 30px 20px;
+}
+
+.footer-content .social a {
+  color: #e91e63;
+  margin: 0 5px;
+  text-decoration: none;
+}
+
+.whatsapp-float {
+  position: fixed;
+  width:60px;
+  height: 60px;
+  bottom: 20px;
+  right: 20px;
+  background: #25d366;
+  color: white;
+  padding: 10px;
+  border-radius: 50%;
+  text-decoration: none;
+  z-index: 1001;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.whatsapp-float:hover {
+  background: #1ebe5d;
+}
+
+/* // */
+
+.gallery {
+  padding: 60px 20px;
+  text-align: center;
+  background-color: #fdfdfd;
+}
+
+.gallery h2 {
+  font-size: 32px;
+  color: #e91e63;
+  margin-bottom: 30px;
+}
+
+.scroll-row {
+  overflow: hidden;
+  position: relative;
+  white-space: nowrap;
+  margin: 20px 0;
+}
+
+.scroll-track {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.scroll-left .scroll-track {
+  animation: scroll-left 40s linear infinite;
+}
+
+.scroll-right .scroll-track {
+  animation: scroll-right 40s linear infinite;
+}
+
+@keyframes scroll-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes scroll-right {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+.scroll-row img {
+  height: 150px;
+  width: auto;
+  margin: 0 10px;
+  border-radius: 8px;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.scroll-row img:hover {
+  transform: scale(1.05);
+}
+
+@media (max-width: 600px) {
+  .scroll-row img {
+    height: 100px;
+    margin: 0 6px;
+  }
+
+  .gallery h2 {
+    font-size: 24px;
+  }
+}
+
+
+/* // */
+
+/* Lightbox Popup Styles */
+.lightbox {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(55, 22, 22, 0.3);
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 36px;
+  color: white;
+  cursor: pointer;
+  z-index: 10000;
+}
+
+/* 
+//
+ */
+
+
+
+@media (max-width: 700px) {
+  /* Example: Stack navbar vertically */
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    gap:20px;
+  }
+
+  .navbar ul {
+    flex-direction: row;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .hero h1 {
+    font-size: 28px;
+  }
+
+  .service-grid, .gallery-grid, .contact-grid {
+    grid-template-columns: 1fr; /* 1 column */
+  }
+
+  .service-box {
+    padding: 15px;
+    font-size: 16px;
+  }
+
+  .hero {
+    height: auto;
+    padding: 40px 20px;
+  }
+
+  .overlay {
+    padding: 20px;
+  }
+
+  .testimonial-slider {
+    padding: 0 10px;
+  }
+
+  .whatsapp-float {
+    bottom: 15px;
+    right: 15px;
+    padding: 12px;
+  }
+
+  
+}
